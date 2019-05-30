@@ -20,9 +20,11 @@ var lengthOfLongestSubstring = function(s) {
     //   obj.push(s[j]);
     // }
 
-    if(obj.indexOf(s[j]) > 0) {
-    	
+    if (obj.indexOf(s[j]) >= 0) {
+      max = Math.max(obj.length, max);
+      obj = obj.slice(obj.indexOf(s[j]) + 1);
     }
+    obj.push(s[j]);
   }
   return Math.max(obj.length, max);
 };
